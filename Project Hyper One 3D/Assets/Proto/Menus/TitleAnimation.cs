@@ -27,7 +27,7 @@ public class TitleAnimation : MonoBehaviour {
 
             titles[i].color = colors[j];
 
-            if (i < colors.Length)
+            if (i < colors.Length-1)
             {
                 i++;
             }
@@ -45,12 +45,14 @@ public class TitleAnimation : MonoBehaviour {
                 }
             }
 
+
+
             yield return new WaitForSeconds(speed);
 
             if (i > 0){
                 titles[i - 1].color = Color.white;
             }else if(i == 0){
-                titles[colors.Length].color = Color.white;
+                titles[colors.Length-1].color = Color.white;
                 yield return new WaitForSeconds(wait);
             }
         }
